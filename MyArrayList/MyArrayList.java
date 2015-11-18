@@ -6,7 +6,7 @@ public class MyArrayList
   // Initialized with a default size of 20
   public MyArrayList()
   {
-    dataStore = new String[3];
+    dataStore = new String[20];
     back = 0;
   }
 
@@ -34,7 +34,7 @@ public class MyArrayList
   public void add(int index, String value)
   {
     // if value is null just set the value there
-    if(dataStore[index] == null)
+    if(dataStore[index].equals(null))
     {
       set(index, value);
     }
@@ -68,7 +68,7 @@ public class MyArrayList
       dataStore[i] = dataStore[i + 1];
     }
     // Make last element null
-    dataStore[size() - 1] = null;
+    dataStore[back - 1] = null;
 
     // Update back
     back -= 1;
