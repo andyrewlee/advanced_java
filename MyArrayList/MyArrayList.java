@@ -2,8 +2,7 @@ public class MyArrayList
 {
   private String[] dataStore;
   private int back;
-
-  // Initialized with a default size of 20
+// Initialized with a default size of 20
   public MyArrayList()
   {
     dataStore = new String[20];
@@ -34,7 +33,7 @@ public class MyArrayList
   public void add(int index, String value)
   {
     // if value is null just set the value there
-    if(dataStore[index].equals(null))
+    if(dataStore[index] == null)
     {
       set(index, value);
     }
@@ -63,8 +62,8 @@ public class MyArrayList
   // Removes an element from a particular index
   public void remove(int index)
   {
-    // Shift elements starting from index + 1 all the way to end - 1 one spot left
-    for(int i = index + 1; i < back - 1; i++) {
+    // Shift elements starting from index all the way to end - 1 one spot left
+    for(int i = index; i < back - 1; i++) {
       dataStore[i] = dataStore[i + 1];
     }
     // Make last element null
@@ -93,5 +92,13 @@ public class MyArrayList
       {
         doubleInSize();
       }
+  }
+
+  public void display()
+  {
+    for(int i = 0; i < back; i++)
+    {
+      System.out.println(dataStore[i]);
+    }
   }
 }

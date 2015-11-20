@@ -6,6 +6,30 @@ public class MyLinkedList
     head = null;
   }
 
+  // Add to the back of the list
+  public void add(String data)
+  {
+    Node newNode = new Node();
+    newNode.setData(data);
+
+    // If there are no nodes just set the new node as head
+    if(head == null)
+    {
+      head = newNode;
+      // Leave the function by returning because our job is done
+      return;
+    }
+
+    // If there were nodes then set last node's next to new node
+    Node currentNode = head;
+    while(currentNode.getNext() != null)
+    {
+      currentNode = currentNode.getNext();
+    }
+
+    currentNode.setNext(newNode);
+  }
+
   // Displays data of all nodes in list
   public void display()
   {
@@ -31,31 +55,6 @@ public class MyLinkedList
 
     return count;
   }
-
-  // Add to the back of the list
-  public void add(String data)
-  {
-    Node newNode = new Node();
-    newNode.setData(data);
-
-    // If there are no nodes just set the new node as head
-    if(head == null)
-    {
-      head = newNode;
-      // Leave the function by returning because our job is done
-      return;
-    }
-
-    // If there were nodes then set last node's next to new node
-    Node currentNode = head;
-    while(currentNode.getNext() != null)
-    {
-      currentNode = currentNode.getNext();
-    }
-
-    currentNode.setNext(newNode);
-  }
-
   // Get a node at particular index
   public Node get(int index)
   {
