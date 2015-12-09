@@ -3,11 +3,12 @@ public class MyProgram
   public static void main(String[] args)
   {
     MyLinkedList myLinkedList = new MyLinkedList();
-    myLinkedList.display();
     myLinkedList.add("One");
-    myLinkedList.add("Two");
-    myLinkedList.add("Three");
+    myLinkedList.add(0, "Zero");
     myLinkedList.display();
-    System.out.println(myLinkedList.size());
+    myLinkedList.remove(0);
+    myLinkedList.display();
+    myLinkedList.set(0, "hello");
+    myLinkedList.display();
   }
 }

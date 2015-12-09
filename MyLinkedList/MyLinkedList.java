@@ -55,6 +55,7 @@ public class MyLinkedList
 
     return count;
   }
+
   // Get a node at particular index
   public Node get(int index)
   {
@@ -71,7 +72,7 @@ public class MyLinkedList
   }
 
   // Get a node right before a particular index
-  private Node getBefore(int index)
+  public Node getBefore(int index)
   {
     int count = 0;
     Node currentNode = head;
